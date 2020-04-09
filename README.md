@@ -16,7 +16,7 @@ docker image build -t demo-dvwa .
 
 ## Phase3 - Starting the Container
 ### Starting the Container
-docker run --rm --name demo-dvwa -d -p 81:80 demo-dvwa
+docker run -d --rm --name demo-dvwa -d -p 81:80 demo-dvwa
 
 ### Executing Commands Inside the Attacker Container
 docker exec -it demo-dvwa bash
