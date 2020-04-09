@@ -1,6 +1,7 @@
 FROM vulnerables/web-dvwa
 EXPOSE 80
 COPY exploit.py /var/www/html/vulnerabilities/exec/
+COPY index.php /var/www/html/vulnerabilities/exec/
 RUN chmod 777 exploit.py
 RUN apt-get update
 RUN apt-get install python
