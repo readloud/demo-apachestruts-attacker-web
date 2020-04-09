@@ -53,12 +53,14 @@ $page[ 'body' ] .= "
 		{$html}
 	</div>
 
-	<h2>Requirement: </h2>
-  <h2>https://hub.docker.com/repository/docker/andrefernandes86/demo-apachestruts-target </h2>
-  <h2>docker run -d --rm -p 81:8080 andrefernandes86/demo-apachestruts-target </h2>
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "ls -la"';
-		echo '127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd"';
-
+<h2> Instructions to attack available at: </h2>
+<h4> https://raw.githubusercontent.com/andrefernandes86/demo-dvwa/master/commands.txt </h4>
+	<ul>
+		<li>" . dvwaExternalLinkUrlGet( 'http://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution' ) . "</li>
+		<li>" . dvwaExternalLinkUrlGet( 'http://www.ss64.com/bash/' ) . "</li>
+		<li>" . dvwaExternalLinkUrlGet( 'http://www.ss64.com/nt/' ) . "</li>
+		<li>" . dvwaExternalLinkUrlGet( 'https://www.owasp.org/index.php/Command_Injection' ) . "</li>
+	</ul>
 </div>\n";
 
 dvwaHtmlEcho( $page );
