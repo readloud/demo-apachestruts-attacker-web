@@ -36,8 +36,10 @@ https://raw.githubusercontent.com/andrefernandes86/demo-dvwa/master/commands.txt
 
 ## How to Build the Image from DockerHub
 ### References
-docker run -d --rm -it -p 81:80 demo-apachestruts-attacker
-username: administrator
-password: password
-https://github.com/andrefernandes86/demo-dvwa
-https://raw.githubusercontent.com/andrefernandes86/demo-dvwa/master/commands.txt
+- docker run -d --rm -it -p 81:80 demo-apachestruts-attacker
+- username: administrator
+- password: password
+- https://github.com/andrefernandes86/demo-dvwa
+- https://raw.githubusercontent.com/andrefernandes86/demo-dvwa/master/commands.txt
+
+.
