@@ -53,8 +53,8 @@ $page[ 'body' ] .= "
 		{$html}
 	</div>
 
-<h2> Instructions to attack available at: </h2>
-<h4> https://raw.githubusercontent.com/andrefernandes86/demo-dvwa/master/commands.txt </h4>
+<h2> The instructions are described in the commands.txt file </h2>
+<h4> https://raw.githubusercontent.com/andrefernandes86/demo-apachestruts-attacker-web/master/commands.txt?token=AGNQHLGWORH4P23VQ5V276K6T3V52 </h4>
 	<ul>
 		<li>" . dvwaExternalLinkUrlGet( 'http://www.scribd.com/doc/2530476/Php-Endangers-Remote-Code-Execution' ) . "</li>
 		<li>" . dvwaExternalLinkUrlGet( 'http://www.ss64.com/bash/' ) . "</li>
