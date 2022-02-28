@@ -1,6 +1,8 @@
 # Apache Struts - Attacker Container | [andrefernandes86](https://github.com/andrefernandes86)
+
 ## How to Build the Image from Dockerfile
-## Phase1 - Requirements
+
+### Phase1 - Requirements
 Linux Machine
 
 ### Installing Docker
